@@ -1,0 +1,4 @@
+ProjectID,ProjectName,Status,LeadScientist,ResearchFocus,KeyFinding
+P-101,Project Alpha,Completed,Dr. Ghayas,Transformer Attention Mechanisms,Scaling attention heads improves long-context window retrieval accuracy by 18%.
+P-102,Project Beta,In-Progress,Sarah Jenkins,Multi-Agent Orchestration,Routing via local deterministic validation layers reduces cloud-side agent handshake latency.
+P-103,Project Gamma,Planning,Alex Rivera,Retrieval-Augmented Generation,Hybrid sparse-dense vector indices yield a 34% reduction in semantic hallucination rates.
