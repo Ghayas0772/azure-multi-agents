@@ -4,56 +4,59 @@ author: Ghayasudin Ghayas
 date: "`r Sys.Date 06/10/2026
 output: github_document
 ---
+---
+title: "Azure Async Multi-Agent Orchestrator"
+author: "Project Documentation"
+date: "`r Sys.Date()`"
+output: github_document
+---
 
 # Azure Async Multi-Agent Orchestrator
 
-A high-performance, asynchronous multi-agent orchestration framework built on **Azure AI Foundry**. This project demonstrates a production-ready pattern for routing user queries to specialized AI agents while maintaining stateful session context through an interactive **Streamlit** dashboard.
+A high-performance, asynchronous multi-agent orchestration framework built on **Azure AI Foundry**. This project routes user queries to specialized AI agents (Orchestrator + RAG Specialist) while maintaining stateful session context via a Streamlit dashboard.
 
-## Architectural Concept
+##  System Architecture
 
-The system follows a modular "Orchestrator-Worker" pattern, designed for scalability and high performance.
+The project relies on a decoupled, modular design to ensure scalability.
 
 
 
-* **Orchestrator**: Acts as the intelligent traffic controller, analyzing user intent and applying local guardrails.
-* **Worker Agents (RAG)**: Specialized agents that perform data analysis within a secure sandbox using the Code Interpreter tool.
-* **Async Core**: Built with `asyncio` to handle non-blocking agent polling, ensuring the UI remains responsive during long-running tasks.
+* **Orchestrator**: Acts as the traffic controller, analyzing user intent and applying local guardrails.
+* **RAG Specialist**: A worker agent that performs data analysis within a secure sandbox using the `CodeInterpreterTool`.
+* **Async Core**: Built with `asyncio` to handle non-blocking agent polling, keeping the UI responsive.
 
-## Prerequisites
+##  File Anatomy
 
-To run this project, you will need:
-* Python 3.12+
-* An active **Azure AI Foundry** project.
-* The following environment variables defined in a `.env` file:
-    * `PROJECT_ENDPOINT`
-    * `ORCHESTRATOR_ID`
-    * `RAG_SPECIALIST_ID`
+| File | Role |
+| :--- | :--- |
+| `app_ui.py` | The "Brain": Handles UI, state management, and async orchestration logic. |
+| `.env` | The "Vault": Secure storage for your API keys and project endpoints. |
+| `.gitignore` | The "Shield": Prevents secrets and temporary files from entering Git. |
+| `requirements.txt` | The "Manifest": Lists all necessary Python dependencies. |
 
-##  Usage
+##  Quick Setup
 
-### Installation
+### 1. Prerequisites
+Ensure you have **Python 3.12+** installed. You will need an active Azure AI Foundry project. Create a `.env` file in the root folder with:
+```text
+PROJECT_ENDPOINT=your_endpoint_here
+ORCHESTRATOR_ID=your_orchestrator_id_here
+RAG_SPECIALIST_ID=your_rag_specialist_id_here
 
-```bash
+# 2. Installation
 # Clone the repository
 git clone [https://github.com/your-username/azure-multi-agents.git](https://github.com/your-username/azure-multi-agents.git)
 cd azure-multi-agents
 
 # Set up the virtual environment
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-### Running the Dashboard
-Launch the application using the Streamlit CLI:
-<img width="644" height="81" alt="image" src="https://github.com/user-attachments/assets/190b3fba-c72d-43ed-ae1a-64b506ba89ff" />
-
+# Windows:
+.venv\Scripts\activate
+# Mac/Linux:
+source .venv/bin/activate
 
 # Install dependencies
-streamlit run app_ui.py
+pip install -r requirements.txt
 
-### File Structure
-Code snippet
-# This code block helps visualize the project structure
-cat("Project Root:
-├── app_ui.py       # Core Streamlit app & async logic
-├── .gitignore      # Keeps secrets and venv out of Git
-├── requirements.txt # Project dependencies
-└── README.Rmd      # Documentation")
+# 3. Launching the Dashboard
+streamlit run app_ui.py
