@@ -1,7 +1,7 @@
 ---
 title: "Azure Async Multi-Agent Orchestrator"
-author: "Your Name"
-date: "`r Sys.Date()`"
+author: Ghayasudin Ghayas
+date: "`r Sys.Date 06/10/2026
 output: github_document
 ---
 
@@ -47,8 +47,13 @@ Launch the application using the Streamlit CLI:
 
 
 # Install dependencies
-pip install -r requirements.txt
+streamlit run app_ui.py
 
 ### File Structure
-<img width="663" height="178" alt="image" src="https://github.com/user-attachments/assets/24e58a1a-565c-4660-bf82-d0a4a86ca5dc" />
-
+Code snippet
+# This code block helps visualize the project structure
+cat("Project Root:
+├── app_ui.py       # Core Streamlit app & async logic
+├── .gitignore      # Keeps secrets and venv out of Git
+├── requirements.txt # Project dependencies
+└── README.Rmd      # Documentation")
