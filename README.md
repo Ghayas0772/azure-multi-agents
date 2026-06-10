@@ -4,12 +4,6 @@ author: Ghayasudin Ghayas
 date: "`r Sys.Date 06/10/2026
 output: github_document
 ---
----
-title: "Azure Async Multi-Agent Orchestrator"
-author: "Project Documentation"
-date: "`r Sys.Date()`"
-output: github_document
----
 
 # Azure Async Multi-Agent Orchestrator
 
