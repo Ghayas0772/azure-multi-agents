@@ -56,23 +56,24 @@ azure-multi-agents/
 1. Clone the Repository
 ```
  git clone https://github.com/Ghayas0772/azure-multi-agents.git
-cd azure-multi-agents ```
+cd azure-multi-agents 
 
 # 2. Create Virtual Environment
-``` python -m venv venv ```
+ python -m venv venv
 
 # 3. Activate Environment
-``` venv\Scripts\activate ```
+venv\Scripts\activate
 
 # 4. Install Dependencies
-``` pip install -r requirements.txt ```
+pip install -r requirements.txt
 
 #5. Configure Environment
-```
+
 Create a .env file:
 PROJECT_ENDPOINT=your_endpoint_here
 ORCHESTRATOR_ID=your_orchestrator_id_here
-RAG_SPECIALIST_ID=your_rag_specialist_id_here ```
+RAG_SPECIALIST_ID=your_rag_specialist_id_here
+```
 
 # Run the Application
 
