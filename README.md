@@ -54,39 +54,39 @@ azure-multi-agents/
 
 #  Setup Instructions
 1. Clone the Repository
-
-""" git clone https://github.com/Ghayas0772/azure-multi-agents.git
-cd azure-multi-agents"""
+```
+ git clone https://github.com/Ghayas0772/azure-multi-agents.git
+cd azure-multi-agents ```
 
 # 2. Create Virtual Environment
-'''python -m venv venv'''
+``` python -m venv venv ```
 
 # 3. Activate Environment
-'''venv\Scripts\activate'''
+``` venv\Scripts\activate ```
 
 # 4. Install Dependencies
-'''pip install -r requirements.txt'''
+``` pip install -r requirements.txt ```
 
 #5. Configure Environment
-'''
+```
 Create a .env file:
 PROJECT_ENDPOINT=your_endpoint_here
 ORCHESTRATOR_ID=your_orchestrator_id_here
-RAG_SPECIALIST_ID=your_rag_specialist_id_here '''
+RAG_SPECIALIST_ID=your_rag_specialist_id_here ```
 
 # Run the Application
 
 Start the Streamlit dashboard
-'''
+```
 streamlit run app_ui.py
-'''
+```
 # Tech Stack
-Python 3.12+
+``` Python 3.12+
 Azure AI Foundry (Agent Orchestration)
 Streamlit (UI Dashboard)
 AsyncIO (Concurrency Model)
 CodeInterpreterTool (Secure Execution Sandbox)
-
+```
 # Purpose
 
 This project is designed for:
