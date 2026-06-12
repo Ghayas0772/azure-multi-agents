@@ -55,8 +55,8 @@ azure-multi-agents/
 #  Setup Instructions
 1. Clone the Repository
 
-''' git clone https://github.com/Ghayas0772/azure-multi-agents.git
-cd azure-multi-agents ```
+""" git clone https://github.com/Ghayas0772/azure-multi-agents.git
+cd azure-multi-agents"""
 
 # 2. Create Virtual Environment
 '''python -m venv venv'''
