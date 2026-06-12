@@ -50,12 +50,14 @@ azure-multi-agents/
 ├── deploy_orchestrator.py  # Azure AI Foundry deployment scripts
 ├── requirements.txt        # Project dependencies
 └── .env                    # Environment / API configuration
+```
 
 #  Setup Instructions
 1. Clone the Repository
-
+```
 git clone https://github.com/Ghayas0772/azure-multi-agents.git
-cd azure-multi-agents
+cd azure-multi-agents ```
+
 # 2. Create Virtual Environment
 python -m venv venv
 
