@@ -1,56 +1,79 @@
----
-title: "Azure Async Multi-Agent Orchestrator"
-author: Ghayasudin Ghayas
-date: "`r Sys.Date 06/10/2026
-output: github_document
----
+Azure Async Multi-Agent Orchestrator
+A high-performance, asynchronous multi-agent orchestration framework built on Azure AI Foundry. This project routes user queries to specialized AI agents—an Orchestrator and a RAG Specialist—while maintaining stateful session context via an interactive Streamlit dashboard.
 
-# Azure Async Multi-Agent Orchestrator
+Features
+Async Core: Built with asyncio to handle non-blocking agent polling, ensuring a highly responsive user interface.
 
-A high-performance, asynchronous multi-agent orchestration framework built on **Azure AI Foundry**. This project routes user queries to specialized AI agents (Orchestrator + RAG Specialist) while maintaining stateful session context via a Streamlit dashboard.
+Decoupled Architecture: Modular design separating the orchestration logic, UI state management, and agent tool execution.
 
-##  System Architecture
+Specialized Agent Roles: * Orchestrator: Analyzes user intent and applies local guardrails.
 
-The project relies on a decoupled, modular design to ensure scalability.
+RAG Specialist: Performs targeted data analysis within a secure sandbox using the CodeInterpreterTool.
 
+Stateful UI: Streamlit-based dashboard for real-time interaction and session tracking.
 
+Enterprise-Ready Design: Configured for integration with Azure AI Foundry endpoints.
 
-* **Orchestrator**: Acts as the traffic controller, analyzing user intent and applying local guardrails.
-* **RAG Specialist**: A worker agent that performs data analysis within a secure sandbox using the `CodeInterpreterTool`.
-* **Async Core**: Built with `asyncio` to handle non-blocking agent polling, keeping the UI responsive.
+Project Structure
+Plaintext
+azure-multi-agents/
+│
+├── app_ui.py              # Streamlit dashboard & state management
+├── create_orchestrator.py # Orchestrator agent initialization
+├── create_rag_agent.py    # RAG specialist agent logic
+├── run_chat_async.py      # Core asynchronous polling logic
+├── deploy_orchestrator.py # Deployment scripts for Azure AI
+├── requirements.txt       # Project dependencies
+└── .env                   # Environment/API configuration
+Setup Instructions
+Clone the repository
 
-##  File Anatomy
+Bash
+git clone https://github.com/Ghayas0772/azure-multi-agents.git
+cd azure-multi-agents
+Create virtual environment
 
-| File | Role |
-| :--- | :--- |
-| `app_ui.py` | The "Brain": Handles UI, state management, and async orchestration logic. |
-| `.env` | The "Vault": Secure storage for your API keys and project endpoints. |
-| `.gitignore` | The "Shield": Prevents secrets and temporary files from entering Git. |
-| `requirements.txt` | The "Manifest": Lists all necessary Python dependencies. |
+Bash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+Install dependencies
 
-##  Quick Setup
+Bash
+pip install -r requirements.txt
+Configure Environment
+Create a .env file with your Azure AI Foundry credentials:
 
-### 1. Prerequisites
-Ensure you have **Python 3.12+** installed. You will need an active Azure AI Foundry project. Create a `.env` file in the root folder with:
-```text
+Plaintext
 PROJECT_ENDPOINT=your_endpoint_here
 ORCHESTRATOR_ID=your_orchestrator_id_here
 RAG_SPECIALIST_ID=your_rag_specialist_id_here
+Run the dashboard
 
-# 2. Installation
-# Clone the repository
-git clone [https://github.com/your-username/azure-multi-agents.git](https://github.com/your-username/azure-multi-agents.git)
-cd azure-multi-agents
-
-# Set up the virtual environment
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# Mac/Linux:
-source .venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# 3. Launching the Dashboard
+Bash
 streamlit run app_ui.py
+Tech Stack
+Python 3.12+
+
+Azure AI Foundry (Agent Orchestration)
+
+Streamlit (Frontend Dashboard)
+
+AsyncIO (Concurrency)
+
+CodeInterpreterTool (Secure Sandbox Execution)
+
+Purpose
+This project is built for:
+
+Mastering Azure AI agent orchestration.
+
+Implementing asynchronous workflows in AI applications.
+
+Building scalable, multi-agent systems for data-heavy tasks.
+
+Author
+Ghayasudin Ghayas
+MS Data Science | AI & Machine Learning Enthusiast
