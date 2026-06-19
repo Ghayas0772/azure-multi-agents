@@ -88,7 +88,7 @@ Streamlit (UI Dashboard)
 AsyncIO (Concurrency Model)
 CodeInterpreterTool (Secure Execution Sandbox)
 ```
-## 📸 Multi-Agent System Demo Screenshots
+## Multi-Agent System Demo Screenshots
 
 This section shows the working flow of the Azure Multi-Agent RAG system, including system setup, agent orchestration, user interaction, and final response generation.
 
